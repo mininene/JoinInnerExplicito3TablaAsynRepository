@@ -1,0 +1,41 @@
+﻿@model IEnumerable<BaseDatos.Models.ViewModel.Join>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>JOIN</h2>
+
+<body>
+    <div class="container-fluid py-4">
+        <h4 class="text-center text-uppercase">Consulta</h4>
+        <table class="table table-striped table-bordered">
+            <thead class="bg-dark text-white">
+                <tr>
+                    <th>Usuario</th>
+                    <th>Departamento</th>
+                    <th>Modelo Coche</th>
+                    <th>Marca Coche</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>@item.usuarioList.Nombre</td>
+                    <td>@item.departamentoList.NombreDepartamento</td>
+                    <td>@item.cocheList.Modelo.NombreModelo</td>
+                    <td>@item.cocheList.Marca.NombreMarca</td>
+
+
+
+
+
+
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>  
