@@ -10,7 +10,8 @@ namespace BaseDatos.Services.Repository.QueryRepository
 {
     public interface IUsuarioRepository : IGenericRepository<Usuario>
     {
-        
+        Task<IEnumerable<Coche>> ListadoOrdenadoCoche();
         Task<List<Join>> ListaJoin();
+      
     }
 }

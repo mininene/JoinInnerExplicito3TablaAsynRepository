@@ -10,6 +10,15 @@ namespace BaseDatos.Services.Repository.QueryRepository
 {
     public class UsuarioRepository : GenericRepository<Usuario>, IUsuarioRepository
     {
+        public async Task<IEnumerable<Coche>> ListadoOrdenadoCoche()
+        {
+
+            var cocheListx = await chocheListxt();  //sustituo el _context.Coche sincrono por lista sincrona
+            var query =  cocheListx.OrderBy(x=>x.Modelo.NombreModelo).Where(a=>a.IdModelo==1);
+                        
+            return query;
+        }
+
         public async Task<List<Join>> ListaJoin()
         {
 

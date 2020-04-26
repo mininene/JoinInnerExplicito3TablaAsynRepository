@@ -32,6 +32,7 @@ namespace BaseDatos.Controllers
             //List<Usuario> usuarioListx = db.Usuario.ToList();
             //List<Coche> cocheListx = db.Coche.ToList();
             //List<Departamento> departamentoListx = db.Departamento.ToList();
+
             //var usuarioListx = await repositorio.usuarioListxt();
             //var cocheListx = await repositorio.chocheListxt();
             //var departamentoListx = await repositorio.departamentoListxt();
@@ -49,8 +50,18 @@ namespace BaseDatos.Controllers
             //               };
             //return View(multiple);
 
-            var lista = repositorio.ListaJoin();
-            return View( await lista);
+            var lista = await repositorio.ListaJoin();
+            return View( lista);
+
+
+        }
+
+        public async Task<ActionResult> Indexo()
+        {
+
+            //var lista = repositorio.ListadoOrdenadoCoche();
+            var lista = await repositorio.ListadoOrdenadoCoche();
+            return View(lista );
 
 
         }
